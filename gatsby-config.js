@@ -5,6 +5,9 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+
+    `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -26,9 +29,72 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+
+    },
+
+
+
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            path: node => node.frontmatter.path,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        filter: (node, getNode) => node.frontmatter.tags !== "exempt",
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Poppins`,
+            subsets: [`latin`]
+          },
+        ],
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `localhost/wordpress-gatsby`,
+        protocol: `http`,
+        hostingWPCOM: false,
+        minimizeDeprecationNotice: true
+
+      },
+      includedRoutes: [
+        "/categories",
+        "/posts",
+        "*/pages",
+        "/media",
+        "/tags",
+        "/taxonomies",
+        "/users",
+        "/menus",
+        "**/*/*/portfolio",
+        "**/searchResults"
+
+      ],
+
+    },
   ],
 }
+

@@ -1,0 +1,64 @@
+.navigation-bar{
+        width: max-content;
+        margin-left: 30px ;
+        a{
+            color:#555555;
+            padding: 10px;
+            font-size: 15px;
+            font-family: normal normal normal 14px/21px Poppins;
+            text-decoration: none;        
+        }
+        a:hover{
+            color:#6362D7;            
+        }
+        .active{
+                     
+        color: #9D60EB;
+        .menus{
+            visibility: visible !important;
+            }
+        }        
+        .menus{
+            background-color:#6362D7;
+            width: 9px;
+            height: 9px;
+            border-radius: 100%;
+            border-style: none;
+            margin-left: 45%;
+            visibility: hidden; 
+           }
+
+        .navigation-page:hover{
+        .menus{
+            visibility: visible ;
+        }
+    }
+}
+.logo{
+    margin-left: 25px;
+    
+        img{
+            width: 150px;
+            height: 50px;
+        }
+    }
+.contact-us{
+    width: max-content;
+    button, input{
+        border: 2px solid #9D60EB;
+        background-color: transparent;
+        border-radius: 4px;
+        color:#9D60EB;
+        a{
+            text-decoration: none;
+        }
+   
+     }
+     button:hover{
+         background: transparent linear-gradient(59deg, #6362D7 0%, #FF8FE2 100%) 0% 0% no-repeat padding-box;;
+        color: white;
+        a{
+            color: white;
+        }
+     }
+}
