@@ -40,7 +40,7 @@ const portfolio = function () {
                     <div class="card-body">
                       <h3 className='card-title'> {item.node.title}</h3>
                       <div dangerouslySetInnerHTML={{ __html: item.node.excerpt }} />
-                      <Link to={`/wordpress-gatsby/portfolio/${item.node.slug}`}>Read more</Link>
+                      <Link to={`/portfolio/${item.node.slug}`}>Read more</Link>
                     </div>
                   </div>
                 </div>

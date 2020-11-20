@@ -16,9 +16,11 @@ class ContactForm extends Component {
         message: ''
     }
 
-    handleNameChange = e => (
+    handleNameChange = e => {
+        console.log(e.target.value)
         this.setState({ fName: e.target.value })
-    )
+
+    }
 
     handleLasnNameChange = e => (
         this.setState({ lName: e.target.value })
