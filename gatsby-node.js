@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
     fromPath: '/',
     isPermanent: true,
     redirectInBrowser: true,
-    toPath: 'wordpress-gatsby/home'
+    toPath: '/home'
   });
 
   const result = await graphql(`
