@@ -59,7 +59,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // siteURL: `gotech.trimidev.com`,
-        baseUrl: `http://gotech.trimidev.com/`,
+        baseUrl: `http://localhost/wordpress-gatsby`,
         protocol: `http`,
         hostingWPCOM: false,
         // minimizeDeprecationNotice: true

@@ -36,7 +36,7 @@ const Navigation = () => (
             <div className='navigation-page'>
 
               <div className='active' >
-                <Link to={`/${item.object_slug}`} key={item.title} activeClassName='active' >{item.title}
+                <Link to={`/wordpress-gatsby/${item.object_slug}`} key={item.title} activeClassName='active' >{item.title}
                 </Link>
               </div>
               <div class=" text-center menus active" >

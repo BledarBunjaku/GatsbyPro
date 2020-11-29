@@ -43,7 +43,7 @@ const allTogether = () => {
                     <div class="card-body">
                       <h3 className='card-title'> {item.node.title}</h3>
                       <div dangerouslySetInnerHTML={{ __html: item.node.excerpt }} />
-                      <Link to={`/career/${item.node.slug}`}>Read more</Link>
+                      <Link to={`/wordpress-gatsby/career/${item.node.slug}`}>Read more</Link>
                     </div>
                   </div>
                 </div>
