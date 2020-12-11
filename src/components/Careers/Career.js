@@ -6,6 +6,7 @@ import Developer from './Developer'
 import { Tabs, Tab } from 'react-bootstrap'
 import './CareerStyle/Career.scss'
 import OurGallery from '../AboutUs/OurGallery'
+import ContactForm from '../HomePage/ContactForm'
 import { StaticQuery, graphql } from 'gatsby'
 
 
@@ -42,6 +43,8 @@ const career = function () {
                     <Management />
                 </Tab>
             </Tabs>
+
+            <ContactForm />
         </div>
     )
 }
