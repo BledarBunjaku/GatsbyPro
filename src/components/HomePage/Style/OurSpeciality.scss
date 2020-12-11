@@ -68,3 +68,17 @@
         }
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    .speciality-wrapper {
+        .our-speciality {
+            .slick-prev {
+                left: 36%;
+            }
+
+            .slick-next {
+                right: 36%;
+            }
+        }
+    }
+}
