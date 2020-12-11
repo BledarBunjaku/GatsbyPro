@@ -28,7 +28,7 @@ export default ({ pageContext }) => {
                                     </small>
                                     <p dangerouslySetInnerHTML={{ __html: post.node.content }} />
                                     <div>
-                                        <Link to={`/${post.node.slug}`}>
+                                        <Link to={`/blog/${post.node.slug}`}>
                                             Read more
                     </Link>
                                     </div>
