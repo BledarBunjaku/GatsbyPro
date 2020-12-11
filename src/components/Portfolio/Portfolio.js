@@ -31,7 +31,7 @@ const portfolio = function () {
                   <div className=' mx-auto'>
                     <img className='card-image w-100' src={item.node.featured_media.source_url} alt='thumbnail' />
                     <div class="card-body">
-                      <h3 className='card-title'> {item.node.title}</h3>
+                      <div className='card-title d-flex'><h3 className='card-title align-self-center'> {item.node.title}</h3></div>
                       <div dangerouslySetInnerHTML={{ __html: item.node.excerpt }} />
                       <Link to={`/portfolio/${item.node.slug}`}>Read more</Link>
                     </div>
