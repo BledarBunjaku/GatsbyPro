@@ -1,0 +1,33 @@
+.portfolio-wrapper{
+    h3{
+        text-align: center;
+font: normal normal 600 36px/46px Poppins;
+letter-spacing: 0px;
+color: #222222;
+    }
+    h1{
+        text-align: center;
+        font: normal normal 600 46px/58px Poppins;
+    }
+}
+.card-wrap{
+
+    .card {
+
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 10px 30px #99999933;
+        border-radius: 8px;
+        width: 104% !important;
+
+     border-style: none;
+        img {
+            width: 210px;
+            height: 210px;
+        }
+        p {
+            font: normal normal normal 15px/27px Poppins;
+            letter-spacing: 0px;
+            color: #555555;
+        }
+    }
+}

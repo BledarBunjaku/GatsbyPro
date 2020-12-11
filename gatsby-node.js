@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
     fromPath: '/',
     isPermanent: true,
     redirectInBrowser: true,
-    toPath: '/wordpress-gatsby/home'
+    toPath: '/home'
   });
 
   const result = await graphql(`
@@ -60,6 +60,9 @@ exports.createPages = async ({ graphql, actions }) => {
         content
         excerpt
         wordpress_id
+        featured_media {
+        source_url
+      }
       }
     }
   } 
@@ -128,14 +131,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   const blogs = result.data.allWordpressWpBlog.edges
-  const blogsPerPage = 2
+  const blogsPerPage = 4
   const numberOfPages = Math.ceil(blogs.length / blogsPerPage)
   const blogPostListTemplate = path.resolve('./src/templates/blog.js')
 
   Array.from({ length: numberOfPages }).forEach((blog, index) => {
     createPage({
       component: slash(blogPostListTemplate),
-      path: index === 0 ? '/wordpress-gatsby/blog' : `/wordpress-gatsby/blog/${index + 1}`,
+      path: index === 0 ? '/blog' : `/blog/${index + 1}`,
       context: {
         post: blogs.slice(index * blogsPerPage, (index * blogsPerPage) + blogsPerPage),
         numberOfPages,

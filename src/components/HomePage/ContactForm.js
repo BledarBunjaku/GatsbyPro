@@ -1,6 +1,7 @@
 import { Component } from "react"
 import React from 'react'
 import './Style/ContactForm.scss'
+// import '../HomePage/Style/queries.scss'
 
 
 
@@ -21,6 +22,9 @@ class ContactForm extends Component {
         this.setState({ fName: e.target.value })
 
     }
+
+
+
 
     handleLasnNameChange = e => (
         this.setState({ lName: e.target.value })

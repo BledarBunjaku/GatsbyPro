@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 
 const OurGallery = () => (
 
-    <StaticQuery query={graphql` 
+  <StaticQuery query={graphql` 
     
                         {
   allWordpressPage(filter: {title: {eq: "About"}}) {
@@ -92,47 +92,29 @@ const OurGallery = () => (
   }
 } 
     `
-    } render={props => (props.allWordpressPage.edges.map(item => (
+  } render={props => (props.allWordpressPage.edges.map(item => (
 
+    <div className='row'>
+      <div className='col-md-12 text-center font-weight-bold mt-4 mb-2'><h1>{item.node.acf.gallery_title}</h1></div>
+      <div className='col-md-6'><Img className='img-fluid' fixed={item.node.acf.main_img.localFile.childImageSharp.fixed} /></div>
+      <div className='col-md-6 col-xs-12'>
         <div className='row'>
-            <div className='col-md-12 text-center font-weight-bold mt-5 mb-2'><h1>{item.node.acf.gallery_title}</h1></div>
-            <div className='col-md-6'><Img fixed={item.node.acf.main_img.localFile.childImageSharp.fixed} /></div>
-            <div className='col-md-6'>
-                <div className='row'>
-                    <div className='col-md-6'><Img fixed={item.node.acf.img_1.localFile.childImageSharp.fixed} />  </div>
-                    <div className='col-md-6'><Img fixed={item.node.acf.img_2.localFile.childImageSharp.fixed} /></div>
-                    <div className='col-md-6'><Img fixed={item.node.acf.img_3.localFile.childImageSharp.fixed} /></div>
-                    <div className='col-md-6'><Img fixed={item.node.acf.img_4.localFile.childImageSharp.fixed} /></div>
-                </div>
-            </div>
-            <div className='col-md-6'>
-                <div className='row'>
-                    <div className='col-md-6'><Img fixed={item.node.acf.img_5.localFile.childImageSharp.fixed} /></div>
-                    <div className='col-md-6'><Img fixed={item.node.acf.img_6.localFile.childImageSharp.fixed} /></div>
-                </div>
-            </div>
-            <div className='col-md-6'><Img fixed={item.node.acf.img_7.localFile.childImageSharp.fixed} /></div>
-
-
-
-
-
-
-
+          <div className='col-md-6 '><Img className='img-fluid' fixed={item.node.acf.img_1.localFile.childImageSharp.fixed} />  </div>
+          <div className='col-md-6 '><Img className='img-fluid' fixed={item.node.acf.img_2.localFile.childImageSharp.fixed} /></div>
+          <div className='col-md-6 '><Img className='img-fluid' fixed={item.node.acf.img_3.localFile.childImageSharp.fixed} /></div>
+          <div className='col-md-6 '><Img className='img-fluid' fixed={item.node.acf.img_4.localFile.childImageSharp.fixed} /></div>
         </div>
-
-
-
-
-
-    )))}
-
-
-
-
-    />
-
-
+      </div>
+      <div className='col-md-6'>
+        <div className='row'>
+          <div className='col-md-6 col-xs-12'><Img className='img-fluid' fixed={item.node.acf.img_5.localFile.childImageSharp.fixed} /></div>
+          <div className='col-md-6 col-xs-12'><Img className='img-fluid' fixed={item.node.acf.img_6.localFile.childImageSharp.fixed} /></div>
+        </div>
+      </div>
+      <div className='col-md-6'><Img className='img-fluid' fixed={item.node.acf.img_7.localFile.childImageSharp.fixed} /></div>
+    </div>
+  )))}
+  />
 )
 
 export default OurGallery

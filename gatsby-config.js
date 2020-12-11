@@ -59,13 +59,15 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // siteURL: `gotech.trimidev.com`,
-        baseUrl: `http://localhost/wordpress-gatsby`,
+        // baseUrl: `http://localhost/wordpress-gatsby`,
+        baseUrl: `http://gotech.trimidev.com`,
         protocol: `http`,
         hostingWPCOM: false,
         // minimizeDeprecationNotice: true
 
 
       },
+
       includedRoutes: [
         "/categories",
         "/posts",
@@ -81,6 +83,18 @@ module.exports = {
       ],
 
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `poppins`,
+          `sans-serif\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    }
+
+
   ],
 }
 

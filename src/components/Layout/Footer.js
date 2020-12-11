@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelopeOpen, faMap } from '@fortawesome/free-regular-svg-icons';
 import image from '../../images/footerimg.png'
 import image1 from '../../images/footerimg1.png'
+// import '../HomePage/Style/queries.scss'
 
 
 const Footer = () => (
@@ -45,7 +46,7 @@ const Footer = () => (
                   `
         } render={props => (<ul>{props.allWordpressWpApiMenusMenusItems.nodes[0].items.map(item => (
 
-          <li className="nav-item" ><Link to={`/wordpress-gatsby/${item.object_slug}`} key={item.title}><span>{item.title}</span>
+          <li className="nav-item" ><Link to={`/${item.object_slug}`} key={item.title}><span>{item.title}</span>
           </Link></li>
 
         ))}

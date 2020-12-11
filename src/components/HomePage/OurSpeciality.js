@@ -4,8 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Style/OurSpeciality.scss'
 import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image'
-
+// import '../HomePage/Style/queries.scss'
 export default class OurSpeciality extends Component {
   render() {
     const settings = {
@@ -13,7 +12,7 @@ export default class OurSpeciality extends Component {
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
-      dots: true,
+      dots: false,
       speed: 400,
       responsive: [
         {
@@ -31,7 +30,7 @@ export default class OurSpeciality extends Component {
             slidesToShow: 2,
             slidesToScroll: 1,
             initialSlide: 1,
-            dots: true
+            dots: false
 
           }
         },
@@ -41,122 +40,57 @@ export default class OurSpeciality extends Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             initialSlide: 1,
-            dots: true
+            dots: false
           }
         }
       ]
     };
     return (
-      <div className='col-md-12' >
-
-
-
-        <StaticQuery query={graphql
-          `
-        {
-  allWordpressAcfPosts {
+      <div className='speciality-wrapper'>
+        <StaticQuery query={graphql`
+            {
+  allWordpressPage(filter: {title: {eq: "Home"}}) {
     nodes {
       acf {
-        card1_content
-        card1_title
-        card2_content
-        card2_title
-        card3_content
-        card3_title
-        card4_content
-        card4_title
-        card1_image {
-          url
-        }
-        card4_image {
-          url
-        }
-        card2_image {
-          localFile {
-            childImageSharp {
-              fixed (width: 400 ){
-                          ...GatsbyImageSharpFixed
-              }
-            }
+        speciality_title
+        single_speciality {
+          card_content
+          card_title
+          card_image {
+            url
           }
         }
-        card3_image {
-          localFile {
-            childImageSharp {
-              fixed (width: 400 ){
-                          ...GatsbyImageSharpFixed
-               }
-            }
-          }
-        }
+        speciality_title1
       }
     }
   }
 }
-          
-        
-        `} render={props => (
-            props.allWordpressAcfPosts.nodes.map(item =>
-              <Slider className='our-speciality'  {...settings}>
 
+` } render={props => (<div> <div><h2 className='font-weight-bold'>{props.allWordpressPage.nodes[0].acf.speciality_title}</h2>
+            <p>{props.allWordpressPage.nodes[0].acf.speciality_title1}</p>
 
+          </div><Slider className='our-speciality'{...settings}>{props.allWordpressPage.nodes[0].acf.single_speciality.map(item =>
+            <div className='card border-0'>
+              <img src={item.card_image.url} className="mx-auto img-fluid" alt='img-thumbnail' />
+              <div className='card-bady'>
+                <h5 className='text-center py-1'>{item.card_title}</h5>
+                <p className='text-center'>{item.card_content}</p>
+              </div>
+            </div>
+          )
+          }
+            </Slider>
+          </div>
 
-                <div className='card  text-center my-1 ml-2'>
-                  <img className='card-image' src={item.acf.card1_image.url} alt='thumbnail'></img>
-                  <h3 className='font-weight-bold'>{item.acf.card1_title}</h3>
-                  <p>{item.acf.card1_content}</p>
-                </div>
-
-                <div className='card  text-center my-1 ml-2' >
-                  <img className='card-image' src={item.acf.card4_image.url} alt='thumbnail' />
-                  <h3 className='font-weight-bold'>{item.acf.card4_title}</h3>
-                  <p>{item.acf.card4_content}</p>
-                </div>
-
-                <div className='card text-center my-1 ml-2' >
-                  <Img className='card-image' fixed={item.acf.card2_image.localFile.childImageSharp.fixed} alt='thumbnail'></Img>
-                  <h3 className='font-weight-bold'>{item.acf.card2_title}</h3>
-                  <p>{item.acf.card2_content}</p>
-                </div>
-
-                <div className='card  text-center my-1 ml-2' >
-                  <Img className='card-image' fixed={item.acf.card3_image.localFile.childImageSharp.fixed} alt='thumbnail'></Img>
-                  <h3 className='font-weight-bold'>{item.acf.card3_title}</h3>
-                  <p>{item.acf.card3_content}</p>
-                </div>
-
-
-
-              </Slider>
-            ))} />
-      </div >
-    );
+          )
+          }
+        />
+      </div>
+    )
   }
 }
 
 
 
-{/* <StaticQuery query={graphql 
-        `
-        {
-          allWordpressWpCardpost {
-            nodes {
-              excerpt
-              content
-              featured_media {
-                source_url
-              }
-            }
-          }
-        }          
-        
-        `}  render={props => (   <Slider {...settings}>      {    props.allWordpressWpCardpost.nodes.map( item => 
 
-        <div className='col-md-4'><div className='text-center textStyle'>
-           <img src={item.featured_media.source_url} ></img> 
 
-           <h3  dangerouslySetInnerHTML= {{__html: item.content}}></h3>
-           
-           <p dangerouslySetInnerHTML= {{__html: item.excerpt}}></p>      </div> </div>
-            
-            ) } </Slider>  ) } /> */}

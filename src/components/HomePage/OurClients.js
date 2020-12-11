@@ -9,7 +9,7 @@ import image from '../../images/quote-left.png'
 import image1 from '../../images/quote-right.png'
 import image3 from '../../images/left-clients.png'
 import image4 from '../../images/right-clients.png'
-import '../HomePage/Style/queries.scss'
+// import '../HomePage/Style/queries.scss'
 
 export default class OurClients extends Component {
   render() {
@@ -36,27 +36,27 @@ export default class OurClients extends Component {
 
             `
                {
-                    allWordpressAcfPosts {
-                      nodes {
-                        acf {
-                          clientcard1_client_job
-                          clientcard1_client_name
-                          clientcard1_content
-                          clientcard2_client_job
-                          clientcard2_client_name
-                          clientcard2_content
-                          clientcard1__image {
-                            url
-                          }
-                          clientcard2_image {
-                            url
-                          }
-                        }
-                      }
-                    }
-                  }`
+  allWordpressAcfPages(filter: {id: {eq: "7c0491ac-fe26-5fb8-97af-03f870256300"}}) {
+    nodes {
+      acf {
+        clientcard1_client_job
+        clientcard1_client_name
+        clientcard1_content
+        clientcard1__image {
+          url
+        }
+        clientcard2_client_job
+        clientcard2_client_name
+        clientcard2_content
+        clientcard2_image {
+          url
+        }
+      }
+    }
+  }
+}`
 
-          } render={props => (props.allWordpressAcfPosts.nodes.map(item =>
+          } render={props => (props.allWordpressAcfPages.nodes.map(item =>
 
             <Slider className='text-center card ' {...settings}>
 

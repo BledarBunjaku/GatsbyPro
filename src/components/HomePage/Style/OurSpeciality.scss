@@ -1,17 +1,70 @@
-.our-speciality{
-   .card{
-        background-color: transparent;
-        width: 90% !important;
-        height: 350px;
-        box-shadow: 0px 0px 12px 4px rgb(233, 233, 233);
-        .card-image{
-            margin:0 auto;
-            width: 210px;
-            height: 211px;
+.speciality-wrapper {
+    padding-bottom: 100px;
+
+    h2 {
+        text-align: center;
+        font: normal normal normal 36px/46px Poppins;
+        letter-spacing: 0px;
+        color: #222222;
+    }
+    h5 {
+        text-align: center;
+        font: normal normal 600 24px/24px Poppins;
+    }
+    p {
+        text-align: center;
+        font: normal normal 600 36px/46px Poppins;
+        letter-spacing: 0px;
+        color: #222222;
+    }
+
+    .our-speciality {
+        .card {
+            img {
+                width: 210px;
+                height: 210px;
+                border-radius: 50%;
+            }
+            p {
+                font: normal normal normal 15px/27px Poppins;
+                letter-spacing: 0px;
+                color: #555555;
+            }
+            background: #ffffff 0% 0% no-repeat padding-box;
+            box-shadow: 0px 10px 30px #99999933;
+            border-radius: 8px;
+            width: 93% !important;
+            padding: 60px 35px;
+        }
+        .slick-prev {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            transform: unset;
+
+            border-radius: 50%;
+            background: #ffffff 0% 0% no-repeat padding-box;
+            box-shadow: 0px 10px 30px #99999933;
+            top: 105%;
+            left: 45%;
+            &:before {
+                content: url(../../../images/left.png);
+            }
+        }
+        .slick-next {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            transform: unset;
+
+            border-radius: 50%;
+            background: #ffffff 0% 0% no-repeat padding-box;
+            box-shadow: 0px 10px 30px #99999933;
+            top: 105%;
+            right: 45%;
+            &:before {
+                content: url(../../../images/right.png);
+            }
         }
     }
 }
-
-    
-
-    

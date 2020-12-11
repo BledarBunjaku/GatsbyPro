@@ -3,6 +3,7 @@ import { Navbar, Nav, Form } from "react-bootstrap"
 import { StaticQuery, graphql, Link } from 'gatsby';
 import './Style/Navigation.scss'
 import icon from '../../images/Logo.jpg'
+import Search from '../../components/Search/Search'
 
 
 
@@ -36,7 +37,7 @@ const Navigation = () => (
             <div className='navigation-page'>
 
               <div className='active' >
-                <Link to={`/wordpress-gatsby/${item.object_slug}`} key={item.title} activeClassName='active' >{item.title}
+                <Link to={`/${item.object_slug}`} key={item.title} activeClassName='active' >{item.title}
                 </Link>
               </div>
               <div class=" text-center menus active" >
