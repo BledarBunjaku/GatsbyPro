@@ -34,9 +34,8 @@ export default class OurClients extends Component {
 
           <StaticQuery query={graphql
 
-            `
-               {
-  allWordpressAcfPages(filter: {id: {eq: "7c0491ac-fe26-5fb8-97af-03f870256300"}}) {
+            `{
+  allWordpressAcfPages(filter: {id: {eq: "aad357fd-d57b-50cc-9b0e-5297bd0686b6"}}) {
     nodes {
       acf {
         clientcard1_client_job
