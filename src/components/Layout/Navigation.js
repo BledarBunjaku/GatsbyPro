@@ -13,7 +13,7 @@ const Navigation = () => (
 
 
   <Navbar bg="transparent" expand="lg" className="container">
-    <Navbar.Brand><span><a href='http://https://main.dcs679qalokhc.amplifyapp.com/home'><img src={icon} alt='thumbnail' /></a></span></Navbar.Brand>
+    <Navbar.Brand><span><a href='https://main.dcs679qalokhc.amplifyapp.com/home'><img src={icon} alt='thumbnail' /></a></span></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
 
