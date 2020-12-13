@@ -45,7 +45,7 @@ export default ({ pageContext }) => {
                 {Array.from({ length: pageContext.numberOfPages }).map((page, index) => (
                     <div className='page-number-wrapper text-center' key={index} isCurrentPage={index + 1 === pageContext.currentPage}>
                         <div className='anchor-style'>
-                            <Link className='page-number active' to={index === 0 ? '/wordpress-gatsby/blog' : `/wordpress-gatsby/blog/${index + 1}`}>
+                            <Link className='page-number active' to={index === 0 ? '/blog' : `/blog/${index + 1}`}>
                                 {index + 1}
                             </Link>
                         </div>
