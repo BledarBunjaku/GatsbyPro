@@ -19,7 +19,7 @@ export default ({ pageContext }) => {
                     return (
                         <div className='col-md-4 '>
                             <div className='card'>
-                                <div>
+                                <div className='text-center'>
                                     <img className='card-img-top img-fluid' src={post.node.featured_media.source_url} alt='thumbnail' /></div>
                                 <div className='card-body' key={post.node.wordpress_id}>
                                     <h3 className='card-title' dangerouslySetInnerHTML={{ __html: post.node.title }} />
